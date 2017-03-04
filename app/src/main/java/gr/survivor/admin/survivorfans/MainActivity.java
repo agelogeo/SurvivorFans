@@ -15,6 +15,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -25,22 +26,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button twitter_feed_btn = (Button) findViewById(R.id.twitter_feed_btn);
-        twitter_feed_btn.setOnClickListener(this);
+        setTitle("");
+
+        ImageButton ht_twitter_btn = (ImageButton) findViewById(R.id.ht_twitter_btn);
+        ht_twitter_btn.setOnClickListener(this);
+        ImageButton ht_fb_btn = (ImageButton) findViewById(R.id.ht_fb_btn);
+        ht_fb_btn.setOnClickListener(this);
+        ImageButton ht_insta_btn = (ImageButton) findViewById(R.id.ht_insta_btn);
+        ht_insta_btn.setOnClickListener(this);
+
+        ImageButton celebrities_btn = (ImageButton) findViewById(R.id.celebrities_btn);
+        celebrities_btn.setOnClickListener(this);
+        ImageButton fighters_btn = (ImageButton) findViewById(R.id.fighters_btn);
+        fighters_btn.setOnClickListener(this);
+        ImageButton social_video_btn = (ImageButton) findViewById(R.id.social_video_btn);
+        social_video_btn.setOnClickListener(this);
+        ImageButton social_news_btn = (ImageButton) findViewById(R.id.social_news_btn);
+        social_news_btn.setOnClickListener(this);
+
         Button fb_btn_1 = (Button) findViewById(R.id.fb_btn_1);
         fb_btn_1.setOnClickListener(this);
-        Button fb_feed_btn = (Button) findViewById(R.id.fb_feed_btn);
-        fb_feed_btn.setOnClickListener(this);
-        Button celebrities_btn = (Button) findViewById(R.id.celebrities_btn);
-        celebrities_btn.setOnClickListener(this);
-        Button fighters_btn = (Button) findViewById(R.id.fighters_btn);
-        fighters_btn.setOnClickListener(this);
-        Button news_btn = (Button) findViewById(R.id.news_btn);
-        news_btn.setOnClickListener(this);
-        Button video_btn = (Button) findViewById(R.id.video_btn);
-        video_btn.setOnClickListener(this);
-        Button insta_btn = (Button) findViewById(R.id.insta_btn);
-        insta_btn.setOnClickListener(this);
+
 
     }
 
@@ -50,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         CustomTabsIntent.Builder builder;
         CustomTabsIntent intent;
         switch (view.getId()){
-            case R.id.twitter_feed_btn:
+            case R.id.ht_twitter_btn:
                 url = "https://m.twitter.com/hashtag/survivorgr?lang=el";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
@@ -68,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
-            case R.id.fb_feed_btn:
+            case R.id.ht_fb_btn:
                 url = "https://m.facebook.com/hashtag/survivorgr?";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
@@ -95,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
-            case R.id.news_btn:
+            case R.id.social_news_btn:
                 url = "http://survivor.skai.gr/category/news/";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
@@ -104,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
-            case R.id.video_btn:
+            case R.id.social_video_btn:
                 url = "http://survivor.skai.gr/videos/";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
@@ -113,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
-            case R.id.insta_btn:
+            case R.id.ht_insta_btn:
                 url = "https://www.instagram.com/explore/tags/survivorgr/";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
