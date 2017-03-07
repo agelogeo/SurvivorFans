@@ -229,7 +229,7 @@
                 android:backgroundTint="@android:color/holo_blue_dark" />
 
             <Button
-                android:text="Συλογος Μανατζερ Ραγκπι"
+                android:text="Συλλογος Μανατζερ Ραγκπι"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_sullogos_ragby"
@@ -241,6 +241,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_survivor_memes"
                 android:backgroundTint="@android:color/holo_blue_bright" />
+
+            <Button
+                android:text="QUIΖ: Με ποιον παικτη ταιριαζεις;"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_quiz_1"
+                android:backgroundTint="@android:color/holo_red_light" />
 
         </LinearLayout>
 

@@ -53,10 +53,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btn_ataka_epi_topou = (Button) findViewById(R.id.btn_ataka_epi_topou);
         btn_ataka_epi_topou.setOnClickListener(this);
-        Button btn_survivor_memes = (Button) findViewById(R.id.btn_survivor_memes);
-        btn_survivor_memes.setOnClickListener(this);
         Button btn_sullogos_ragby = (Button) findViewById(R.id.btn_sullogos_ragby);
         btn_sullogos_ragby.setOnClickListener(this);
+        Button btn_survivor_memes = (Button) findViewById(R.id.btn_survivor_memes);
+        btn_survivor_memes.setOnClickListener(this);
+        Button btn_quiz_1 = (Button) findViewById(R.id.btn_quiz_1);
+        btn_quiz_1.setOnClickListener(this);
 
     }
 
@@ -176,6 +178,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_survivor_memes:
                 url = "https://m.facebook.com/SurvivorMems/?hc_ref=NEWSFEED&fref=nf";
+                builder = new CustomTabsIntent.Builder();
+                builder.setShowTitle(true);
+                builder.setStartAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+                builder.setExitAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+                intent = builder.build();
+                intent.launchUrl(MainActivity.this, Uri.parse(url));
+                break;
+            case R.id.btn_quiz_1:
+                url = "http://m.ladylike.gr/articles/pop_culture/Tileorasi/quiz/koyiz-me-poion-paikth-toy-survivor-tairiazeis-pio-polu.4552881.html";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
                 builder.setStartAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
