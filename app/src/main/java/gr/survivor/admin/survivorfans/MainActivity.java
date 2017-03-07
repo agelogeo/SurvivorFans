@@ -39,14 +39,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         celebrities_btn.setOnClickListener(this);
         ImageButton fighters_btn = (ImageButton) findViewById(R.id.fighters_btn);
         fighters_btn.setOnClickListener(this);
+
+        ImageButton social_fb_btn = (ImageButton) findViewById(R.id.social_fb_btn);
+        social_fb_btn.setOnClickListener(this);
+        ImageButton social_twitter_btn = (ImageButton) findViewById(R.id.social_twitter_btn);
+        social_twitter_btn.setOnClickListener(this);
+        ImageButton social_insta_btn = (ImageButton) findViewById(R.id.social_insta_btn);
+        social_insta_btn.setOnClickListener(this);
         ImageButton social_video_btn = (ImageButton) findViewById(R.id.social_video_btn);
         social_video_btn.setOnClickListener(this);
         ImageButton social_news_btn = (ImageButton) findViewById(R.id.social_news_btn);
         social_news_btn.setOnClickListener(this);
 
-        Button fb_btn_1 = (Button) findViewById(R.id.fb_btn_1);
-        fb_btn_1.setOnClickListener(this);
-
+        Button btn_ataka_epi_topou = (Button) findViewById(R.id.btn_ataka_epi_topou);
+        btn_ataka_epi_topou.setOnClickListener(this);
+        Button btn_survivor_memes = (Button) findViewById(R.id.btn_survivor_memes);
+        btn_survivor_memes.setOnClickListener(this);
+        Button btn_sullogos_ragby = (Button) findViewById(R.id.btn_sullogos_ragby);
+        btn_sullogos_ragby.setOnClickListener(this);
 
     }
 
@@ -56,6 +66,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         CustomTabsIntent.Builder builder;
         CustomTabsIntent intent;
         switch (view.getId()){
+            case R.id.ht_fb_btn:
+                url = "https://m.facebook.com/hashtag/survivorgr?";
+                builder = new CustomTabsIntent.Builder();
+                builder.setShowTitle(true);
+                builder.setStartAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+                builder.setExitAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+                intent = builder.build();
+                intent.launchUrl(MainActivity.this, Uri.parse(url));
+                break;
             case R.id.ht_twitter_btn:
                 url = "https://m.twitter.com/hashtag/survivorgr?lang=el";
                 builder = new CustomTabsIntent.Builder();
@@ -65,21 +84,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
-            case R.id.fb_btn_1:
-                url = "https://m.facebook.com/atakakiepitopou/?fref=nf";
+            case R.id.ht_insta_btn:
+                url = "https://www.instagram.com/explore/tags/survivorgr/";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
                 builder.setStartAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
                 builder.setExitAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
-                intent = builder.build();
-                intent.launchUrl(MainActivity.this, Uri.parse(url));
-                break;
-            case R.id.ht_fb_btn:
-                url = "https://m.facebook.com/hashtag/survivorgr?";
-                builder = new CustomTabsIntent.Builder();
-                builder.setShowTitle(true);
-                builder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
-                builder.setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
@@ -101,8 +111,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
-            case R.id.social_news_btn:
-                url = "http://survivor.skai.gr/category/news/";
+            case R.id.social_fb_btn:
+                url = "https://m.facebook.com/SurvivorGreece/";
+                builder = new CustomTabsIntent.Builder();
+                builder.setShowTitle(true);
+                builder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+                builder.setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+                intent = builder.build();
+                intent.launchUrl(MainActivity.this, Uri.parse(url));
+                break;
+            case R.id.social_twitter_btn:
+                url = "https://m.twitter.com/survivorgreece";
+                builder = new CustomTabsIntent.Builder();
+                builder.setShowTitle(true);
+                builder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+                builder.setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+                intent = builder.build();
+                intent.launchUrl(MainActivity.this, Uri.parse(url));
+                break;
+            case R.id.social_insta_btn:
+                url = "https://instagram.com/survivorgreece/";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
                 builder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
@@ -119,8 +147,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
-            case R.id.ht_insta_btn:
-                url = "https://www.instagram.com/explore/tags/survivorgr/";
+            case R.id.social_news_btn:
+                url = "http://survivor.skai.gr/category/news/";
                 builder = new CustomTabsIntent.Builder();
                 builder.setShowTitle(true);
                 builder.setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
@@ -128,10 +156,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = builder.build();
                 intent.launchUrl(MainActivity.this, Uri.parse(url));
                 break;
+            case R.id.btn_ataka_epi_topou:
+                url = "https://m.facebook.com/atakakiepitopou/?fref=nf";
+                builder = new CustomTabsIntent.Builder();
+                builder.setShowTitle(true);
+                builder.setStartAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+                builder.setExitAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+                intent = builder.build();
+                intent.launchUrl(MainActivity.this, Uri.parse(url));
+                break;
+            case R.id.btn_sullogos_ragby:
+                url = "https://m.facebook.com/%CE%A0%CE%B1%CE%BD%CE%B5%CE%BB%CE%BB%CE%AE%CE%BD%CE%B9%CE%BF%CF%82-%CE%A3%CF%8D%CE%BB%CE%BB%CE%BF%CE%B3%CE%BF%CF%82-%CE%9C%CE%AC%CE%BD%CE%B1%CF%84%CE%B6%CE%B5%CF%81-%CE%A1%CE%AC%CE%B3%CE%BA%CE%BC%CF%80%CE%B9-628886827297541/?fref=ts";
+                builder = new CustomTabsIntent.Builder();
+                builder.setShowTitle(true);
+                builder.setStartAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+                builder.setExitAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+                intent = builder.build();
+                intent.launchUrl(MainActivity.this, Uri.parse(url));
+                break;
+            case R.id.btn_survivor_memes:
+                url = "https://m.facebook.com/SurvivorMems/?hc_ref=NEWSFEED&fref=nf";
+                builder = new CustomTabsIntent.Builder();
+                builder.setShowTitle(true);
+                builder.setStartAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right);
+                builder.setExitAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left);
+                intent = builder.build();
+                intent.launchUrl(MainActivity.this, Uri.parse(url));
+                break;
             default:
-
-
-
         }
     }
 

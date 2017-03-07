@@ -222,11 +222,26 @@
                 android:text="ATAKA ΕΠΙ ΤΟΠΟΥ"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/fb_btn_1"
+                android:id="@+id/btn_ataka_epi_topou"
                 android:layout_below="@+id/twitter_feed_btn"
                 android:layout_alignRight="@+id/video_btn"
                 android:layout_alignEnd="@+id/video_btn"
                 android:backgroundTint="@android:color/holo_blue_dark" />
+
+            <Button
+                android:text="Συλογος Μανατζερ Ραγκπι"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_sullogos_ragby"
+                android:backgroundTint="@android:color/holo_blue_light" />
+
+            <Button
+                android:text="Survivor Memes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_survivor_memes"
+                android:backgroundTint="@android:color/holo_blue_bright" />
+
         </LinearLayout>
 
     </LinearLayout>
